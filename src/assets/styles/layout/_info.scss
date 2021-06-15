@@ -1,0 +1,160 @@
+.info{
+    display: flex;
+    width: 100%;
+    margin: 4rem 0 0;
+    
+    @media ($tablet) {
+        margin-top: 7rem;
+    }
+
+    @media ($desktop) {
+        margin-top: 10rem;
+        margin-bottom: 8rem;
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+
+        @media ($tablet) {
+            margin: 0 auto;
+            width: 125rem;
+        }
+    }
+
+    &__text{
+        padding: 0 2rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+
+        @media ($tablet) {
+            margin-bottom: 7rem;
+            padding: 0 1rem;
+        }
+
+        @media ($desktop) {
+            margin-bottom: 10rem;
+        }
+
+        &-title{
+            width: 100%;
+            @include h3($fsize: 3rem, $lheight: normal, $lspacing: 0.42px, $ops: 0.9, $fweight:bold);
+            text-transform: uppercase;
+
+            @media ($desktop) {
+                max-width: 49.3rem;
+                font-size: 4rem;
+            }
+        }
+
+        &-description{
+            width: 100%;
+            margin-top: 1rem;
+            @include p1($fsize: 1.5rem, $lheight:1.73);
+
+            @media ($desktop) {
+                max-width: 73.1rem;
+                font-size: 1.6rem;
+                margin-top: 3rem;
+            }
+        }
+
+        &-line {
+            margin-top: 2.2rem;
+            width: 15rem;
+            border-bottom: 3px solid $btnColor;
+        }
+    }
+
+    &__forms{
+        display: flex;
+        flex-direction: column;
+        
+        &-form{
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @media ($desktop) {
+                justify-content: start;
+            }
+
+            @media ($tablet) {
+                padding: 0 1rem;
+            }
+            
+            &__data{
+                @include form(100%,6.9rem);
+                margin-bottom: 4.6rem;
+
+                @media ($tablet) {
+                    width: 49%;
+                    &:first-child{
+                        margin-right: 1.1rem;
+                    }
+                }
+
+                @media($desktop){
+                    width: 33.9rem;
+                    &:first-child{
+                        margin-right: 5.4rem;
+                    }
+                }
+            }
+
+            &__dataText{
+                @include form(100%,24.9rem);
+                font-style: normal;
+                @media ($desktop) {
+                    width:73.1rem;
+                    height:24.9rem;
+                }
+                
+                margin-bottom: 4.5rem;
+                resize:none;
+            }
+
+            &__btn{
+                height: 7.2rem;
+                width: 100%;
+                @media ($desktop) {
+                    width: 72.8rem;
+                }
+                @include buttons();
+                
+            }
+        }
+        &-contact{
+            background-color:#2d2d2d;
+            width: 100%;
+            height:auto;
+            margin-top: 4rem;
+
+
+            @media ($desktop) {
+                position: absolute;
+                right: 0;
+                width:25%;
+                height:48.1rem;
+                margin: 0;
+            }
+            
+            &__text{
+                width: 100%;
+                height:auto;
+                padding: 4rem 0 0 2rem;      
+            }
+            &__header{
+                @include h4($white);
+                text-transform: uppercase;
+                margin-bottom: 4.1rem;
+            }
+            &__description{
+                @include p1($white);
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

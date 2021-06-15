@@ -1,0 +1,166 @@
+.production {
+    display: flex;
+    width: 100%;
+    margin-top: 5rem;
+    padding: 0 2rem;
+
+    @media ($tablet) {
+        margin-top: 7rem;
+        padding: 0 1rem;
+    }
+
+    @media ($desktop) {
+        margin-top: 10rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @media ($tablet) {
+            margin: 0 auto;
+            width: 125rem;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+
+        @media ($desktop) {
+            margin-bottom: 10rem;
+        }
+
+        &-title {
+            @include h2($align: center);
+            text-transform: uppercase;
+            margin: 0 auto 2rem;
+
+            @media ($desktop) {
+                max-width: 45rem;
+            }
+        }
+
+        &-description {
+            @include p1($fsize: 1.5rem, $lheight: 1.73);
+            text-align: center;
+
+            @media ($desktop) {
+                max-width: 50.4rem;
+                font-size: 1.65rem;
+                margin: 0 auto;
+                padding-bottom: 2.9rem;
+            }
+        }
+
+        &-line {
+            margin: 2.2rem auto 0;
+            width: 15rem;
+            border-bottom: 3px solid $btnColor;
+
+            @media ($desktop) {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__bar {
+        margin: 0 auto 6rem;
+
+        &-list {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @media ($tablet) {
+                width: 70rem;
+            }
+
+            @media ($desktop) {
+                width: 90rem;
+                justify-content: space-around;
+            }
+
+            &__item {
+                @include h4($fsize: 1.7rem, $lheight: 1.09);
+                text-transform: uppercase;
+                padding: 1rem 2rem;
+
+                @media ($tablet) {
+                    padding: 0rem;
+                }
+
+                @media ($desktop) {
+                    transition: all 0.3s ease;
+                    font-size: 2rem;
+                    margin-right: 0;
+
+                    &:hover {
+                        opacity: 1;
+                        color: $btnColor;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    &__gallery {
+        display: grid;
+        gap: 2rem;
+
+        @media ($tablet) {
+            grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
+        }
+
+        &-item{
+            width: 100%;
+            height: 30rem;
+
+            @media ($tablet) {
+                height: 29rem;
+            }
+
+            position: relative;
+            @media ($desktop) {
+                &::after{
+                    transition: all 0.5s ease;
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f00e";
+                    font-weight: 900;
+                    background-color: rgba(0,0,0,0.3);
+                    opacity: 0;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 4rem;
+                    color: $white;
+                    cursor: pointer;
+                    height: 29rem;
+                    display: flex;
+                    width: inherit;
+                    position: absolute;
+                    bottom: 0;
+                }
+    
+                &:hover::after  {
+                    opacity: 1;
+                }
+            }
+        }
+
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @media ($desktop) {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

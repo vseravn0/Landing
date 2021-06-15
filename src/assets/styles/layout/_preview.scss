@@ -1,0 +1,90 @@
+.preview {
+    height: 68.8rem;
+    width: 100%;
+    background-color: $backColor;
+    display: flex;
+    padding: 0 2rem 4rem;
+    
+    @media ($tablet) {
+        padding: 17rem 1rem 0;
+    }
+
+    @media ($desktop) {
+        padding: 22.6rem 1rem 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media ($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 125rem;
+        }
+    }
+
+    &__text{
+        width: 100%;
+        height:auto;
+        margin-top: 3rem;
+        
+        @media ($tablet) {
+            margin-top: 0;
+            margin-right: 6%;
+        }
+
+        &-title{
+            width: 100%;
+            @include h1();
+            
+            @media ($desktop) {
+                max-width:58.8rem;
+            }
+        }
+
+        &-description{
+            width: 100%;
+            margin-top: 3rem;
+            @include p1($fsize: 1.5rem, $lheight:1.73);
+
+            @media ($desktop){
+                max-width:51.2rem;
+                font-size: 1.65rem;
+            }
+        } 
+    }
+
+    &__btn{
+        @include buttons($bgcolor:$test,$fsize:1.85rem);
+        margin-top: 3rem;
+        width: 100%;
+        height: 4rem;
+
+        @media ($tablet) {
+            width: 22.7rem;
+            height: 5.5rem;
+        }
+  
+    }
+
+    &__video{
+        width: 100%;
+        height:auto;
+        @media ($desktop) {
+            max-width:55.1rem;
+        }
+
+        &-item{
+            width: 100%;
+            height: 35.6rem;
+            padding-top: 10rem;
+            border:none;
+            @media ($tablet) {
+                padding-top: 0;
+            }
+        }
+    }
+    
+}
